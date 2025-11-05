@@ -1,36 +1,38 @@
-const button = document.getElementById('dropdownButton');
-const content = document.getElementById('dropdownContent');
-const playButton = document.getElementById('playButton');
-let selectedUrl = null;
+document.addEventListener("DOMContentLoaded", () => {
+  const form = document.getElementById("loginForm");
 
-// Abre/fecha o menu
-button.addEventListener('click', (event) => {
-  event.stopPropagation();
-  content.classList.toggle('show');
-});
+  form.addEventListener("submit", (e) => {
+    e.preventDefault();
 
-// Fecha o menu se clicar fora
-window.addEventListener('click', (event) => {
-  if (!content.contains(event.target) && !button.contains(event.target)) {
-    content.classList.remove('show');
-  }
-});
+    const username = document.getElementById("username").value.trim();
+    const version = document.getElementById("version").value;
 
-// Seleciona uma opção
-content.querySelectorAll('div').forEach(option => {
-  option.addEventListener('click', (event) => {
-    const selectedText = event.target.textContent;
-    selectedUrl = event.target.getAttribute('data-url');
-    button.textContent = selectedText;
-    content.classList.remove('show');
+    if (!username || !version) {
+      alert("Por favor, preencha todos os campos!");
+      return;
+    }
+
+    // 🔗 Modifique aqui as URLs das versões:
+    const urls = {
+      "1.12.2": "https://theprocat27.github.io/Eaglercraft_1.12.2/",
+      "1.8.8": "https://theprocat27.github.io/Eaglercraft_1.8.8/",
+      "1.5.2": "https://theprocat27.github.io/Eaglercraft_1.5.2/",
+      "1.3": "https://theprocat27.github.io/Eaglercraft_1.3/",
+    };
+
+    const jogoURL = urls[version];
+    const destino = `${jogoURL}?username=${encodeURIComponent(username)}`;
+
+    // Tela de carregamento simples
+    document.body.innerHTML = `
+      <div style="text-align:center; color:white; font-family:sans-serif; margin-top:20%;">
+        <h2>Carregando Eaglercraft ${version}...</h2>
+        <p>Bem-vindo, ${username}!</p>
+      </div>
+    `;
+
+    setTimeout(() => {
+      window.location.href = destino;
+    }, 1500);
   });
-});
-
-// Redireciona ao clicar em "Play"
-playButton.addEventListener('click', () => {
-  if (selectedUrl) {
-    window.location.href = selectedUrl;
-  } else {
-    alert("Por favor, selecione uma versão antes de clicar em Play!");
-  }
 });

@@ -1,26 +1,34 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ECLauncher</title>
-<link rel="stylesheet" href="style.css">
-<link rel="icon" href="favicon.png" type="image/png">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ECLauncher</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="favicon.png">
 </head>
 <body>
+  <div class="container">
+    <img src="web-edition.jpg" alt="Logo" class="logo">
 
-<div class="dropdown">
-  <div class="dropdown-button" id="dropdownButton">Select</div>
-  <div id="dropdownContent" class="dropdown-content">
-    <div data-url="https://theprocat27.github.io/Eaglercraft_1.12.2/">Release 1.12.2</div>
-    <div data-url="https://theprocat27.github.io/Eaglercraft_1.8.8/">Release 1.8.8</div>
-    <div data-url="https://theprocat27.github.io/Eaglercraft_1.5.2/">Release 1.5.2</div>
-    <div data-url="https://theprocat27.github.io/Eaglercraft_1.7.2/">Beta 1.3</div>
+    <form id="loginForm">
+      <input type="text" id="username" placeholder="Type your name" required>
+
+      <select id="version" required>
+        <option value="">Select The Version</option>
+        <option value="1.12.2">1.12.2</option>
+        <option value="1.8.8">1.8.8</option>
+        <option value="1.5.2">1.5.2</option>
+        <option value="1.3">Beta 1.3</option>
+      </select>
+
+      <!-- Botão Play -->
+      <button type="submit" id="playBtn"></button>
+    </form>
+
+    <p class="info">Costumized Launcher - Diamondx 2025</p>
   </div>
-</div>
 
-<button class="play-button" id="playButton">Play ▶</button>
-
-<script src="script.js"></script>
+  <script src="script.js" defer></script>
 </body>
 </html>

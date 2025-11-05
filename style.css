@@ -1,53 +1,57 @@
-  .dropdown {
-    position: relative;
-    display: inline-block;
-    font-family: Arial, sans-serif;
-  }
+body {
+  font-family: "Segoe UI", Tahoma, sans-serif;
+  background: linear-gradient(135deg, #0d0d0d, #1a1a1a);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  margin: 0;
+}
 
-  .dropdown-button {
-    background-color: #f5f5f5;
-    border: 1px solid #ccc;
-    padding: 8px 12px;
-    cursor: pointer;
-    font-weight: bold;
-  }
+.container {
+  background-color: #222;
+  padding: 40px;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+  text-align: center;
+  width: 340px;
+}
 
-  .dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: white;
-    min-width: 160px;
-    border: 1px solid #ccc;
-    border-top: none;
-    box-shadow: 0px 8px 16px rgba(0,0,0,0.1);
-    z-index: 1;
-  }
+.logo {
+  width: 180px;
+  margin-bottom: 20px;
+}
 
-  .dropdown-content div {
-    padding: 8px 12px;
-    cursor: pointer;
-  }
+input, select {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  box-sizing: border-box;
+}
 
-  .dropdown-content div:hover {
-    background-color: #f0f0f0;
-  }
+#playBtn {
+  background: url("play.png") no-repeat center center;
+  background-size: contain;
+  border: none;
+  width: 280px;
+  height: 140px;
+  cursor: pointer;
+  display: block;
+  margin: 10px auto;
+  transition: transform 0.2s;
+}
 
-  .show {
-    display: block;
-  }
+#playBtn:hover {
+  background-image: url("play-hover.png");
+  transform: scale(1.05);
+}
 
-  .play-button {
-    margin-left: 10px;
-    padding: 8px 15px;
-    background-color: #4CAF50;
-    border: none;
-    color: white;
-    font-weight: bold;
-    cursor: pointer;
-    
-  }
-
-  .play-button:hover {
-    background-color: #45a049;
-    border-radius: 1px;
-  }
+.info {
+  font-size: 12px;
+  color: #aaa;
+  margin-top: 15px;
+}
